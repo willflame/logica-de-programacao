@@ -24,25 +24,47 @@ programa {
   funcao inicio() {
     // Passo a passo para resolver:
     // 1- Declarar variáveis
-    inteiro contador
-    real numeros[5] // vetor máximo inicial
-    real produto
+    inteiro TAMANHO, contador
+    real soma, produto
 
     // 2- Inicializar variável  produto (produto deve começar com 1)
     produto = 1 // importante iniciar com 1 para não zerar o resultado
 
-    // 3- Informe ao usuário para que serve o programa
+    // 3- Inicializar soma
+    soma = 0
+
+    // 4- Informe ao usuário para que serve o programa
     escreva("Este programa serve para calcular o produto de dois ou mais números.\n")
 
-    // 4- Utilizar a função de loop "para", para ler cada número e armazenar no vetor
-    // 5- Utilizar o mesmo loop, somar os números e multiplicar para calcular o produto
-    para (contador = 0; contador < 5; contador++) {
-      // 6- Solicitar ao usúario que informe um numero
+    // 5- Perguntar ao usuário quantos números serão digitados
+    leia(TAMANHO)
+
+    // 6- Declarar vetor com otamanho informado pelo usúario
+    real numeros[TAMANHO]
+
+    // 7- Utilizar um loop "para" para ler cada número e armazenar no vetor
+    // 8- Utilizar o mesmo loop, somar os números e multiplicar para calcular o produto
+    para (contador = 0; contador < TAMANHO; contador++) {
+      // 9- Solicitar ao usúario que informe um numero
+      escreva("Digite o numero para calcular\n")
+      leia(numeros[contador])
+
+      // 10- Calcular produto
+      produto = produto * numeros[contador]
+
+      // 11- Somar numeros
+      soma += numeros[contador]
     }
 
-    // 7- Exibir o valores digitados pelo usuário, utilizando a função "para"
+    // 12- Exibir o valores digitados pelo usuário
+    para (contador = 0; contador < TAMANHO; contador++) {
+      escreva(numeros[contador], " ")
+    }
 
-    // 8- Exibir o valor de produto calculado
+    // 13- Exibir o valor de produto calculado
     escreva("\nO produto dos numeros informados é: ", produto)
+
+    // 14- Exibir soma dos números digitados
+    escreva("\nA soma dos numeros informados é: ", soma)
   }
 }

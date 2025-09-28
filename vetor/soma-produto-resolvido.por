@@ -34,13 +34,19 @@ programa {
     // 3- Informe ao usuário para que serve o programa
     escreva("Este programa serve para calcular o produto de dois ou mais números.\n")
 
-    // 4- Utilizar a função de loop "para", para ler cada número e armazenar no vetor
+    // 4- Utilizar um loop "para" para ler cada número e armazenar no vetor
     // 5- Utilizar o mesmo loop, somar os números e multiplicar para calcular o produto
     para (contador = 0; contador < 5; contador++) {
       // 6- Solicitar ao usúario que informe um numero
+      escreva("Digite o numero para calcular\n")
+      leia(numeros[contador])
+      produto = produto * numeros[contador]
     }
 
-    // 7- Exibir o valores digitados pelo usuário, utilizando a função "para"
+    // 7- Exibir o valores digitados pelo usuário
+    para (contador = 0; contador < 5; contador++) {
+      escreva(numeros[contador], " ")
+    }
 
     // 8- Exibir o valor de produto calculado
     escreva("\nO produto dos numeros informados é: ", produto)
